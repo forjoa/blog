@@ -47,6 +47,8 @@ const Cards = () => {
   ]
 
   return (
+    <>
+      <h2 className='subtitle'>The blogsite</h2>
     <div className='cards-container'>
       {cards.map((card, index) => (
         <div key={index} className={card.className}>
@@ -55,6 +57,7 @@ const Cards = () => {
         </div>
       ))}
     </div>
+    </>
   )
 }
 

@@ -2,6 +2,7 @@
 
 :root {
     --background: #000;
+    --background-light: #161A1D;
     --letters: #fff;
     --border: #ffffff1a;
     --shadow: #737373;
@@ -9,6 +10,8 @@
     --orange: #ff8a63;
     --green: #00cf8d;
     --light-blue: #6cf3ff; 
+    --yellow: #eab308;
+    --purple: #ae6dff;
 }
 
 * {
