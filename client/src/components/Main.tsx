@@ -1,6 +1,7 @@
 import '../styles/main.css'
 import screenshot from '../assets/screenshot.png'
 import { Link } from 'react-router-dom'
+import Cards from './Cards'
 
 const Main = () => {
   return (
@@ -15,6 +16,7 @@ const Main = () => {
         </Link>
         <img src={screenshot} />
       </div>
+      <Cards />
     </main>
   )
 }

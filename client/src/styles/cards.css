@@ -1,0 +1,45 @@
+.cards-container {
+    width: 80%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr auto;
+    gap: 15px 15px;
+    grid-template-areas:
+        "who-we-r share no-ads"
+        "works share categories"
+        "works register register";
+}
+
+.cards-container div {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--border);
+    border: 1px solid var(--shadow);
+    border-radius: 10px;
+}
+
+.works {
+    grid-area: works;
+}
+
+.share {
+    grid-area: share;
+}
+
+.register {
+    grid-area: register;
+}
+
+.who-we-r {
+    grid-area: who-we-r;
+}
+
+.no-ads {
+    grid-area: no-ads;
+}
+
+.categories {
+    grid-area: categories;
+}
