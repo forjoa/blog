@@ -1,9 +1,13 @@
-import Header from "./Header"
+import Header from './Header'
+import Main from './Main'
 
 const Home = () => {
-    return (
-        <Header />
-    )
+  return (
+    <>
+      <Header />
+      <Main />
+    </>
+  )
 }
 
 export default Home
