@@ -1,0 +1,47 @@
+.main-login {
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.main-login form {
+    max-width: 600px;
+    width: 80%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.main-login form input[type='email'],
+.main-login form input[type='password'],
+.main-login form input[type='text']  {
+    background-color: var(--background);
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+
+.email-container,
+.password-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-pwd-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.login-submit {
+    background: linear-gradient(122.25deg, var(--green) 12.16%, var(--light-blue) 70.98%);
+    width: 75%;
+    margin: auto;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 0px;
+}
