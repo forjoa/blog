@@ -1,13 +1,14 @@
 import '../styles/cards.css'
+import Card from './Card'
 
-interface Card {
+export interface CardType {
   className: string
   title: string
   description: string
 }
 
 const Cards = () => {
-  const cards: Card[] = [
+  const cards: CardType[] = [
     {
       className: 'works',
       title: 'How we work?',
@@ -49,14 +50,11 @@ const Cards = () => {
   return (
     <>
       <h2 className='subtitle'>The blogsite</h2>
-    <div className='cards-container'>
-      {cards.map((card, index) => (
-        <div key={index} className={card.className}>
-          <h2>{card.title}</h2>
-          <p>{card.description}</p>
-        </div>
-      ))}
-    </div>
+      <div className='cards-container'>
+        {cards.map((card, index) => (
+          <Card card={card} index={index} />
+        ))}
+      </div>
     </>
   )
 }
