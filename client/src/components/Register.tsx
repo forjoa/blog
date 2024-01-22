@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Footer from './Footer'
 import Header from './Header'
 import { IconEye, IconEyeOff } from '@tabler/icons-react'
+import { Link } from 'react-router-dom'
 
 const Register = () => {
   const [name, setName] = useState<string>('')
@@ -74,6 +75,9 @@ const Register = () => {
           </div>
 
           <input type='submit' value='Register' className='login-submit' />
+          <p>
+            If you already have an account: <Link to='/login'>Login</Link>
+          </p>
         </form>
       </div>
       <Footer />

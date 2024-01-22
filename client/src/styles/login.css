@@ -17,6 +17,14 @@
     background: linear-gradient(transparent, var(--background-light));
 }
 
+.main-login form p {
+    text-align: center;
+}
+
+.main-login form p a {
+    text-decoration: underline;
+}
+
 .main-login form input[type='email'],
 .main-login form input[type='password'],
 .main-login form input[type='text']  {
