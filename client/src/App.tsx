@@ -1,9 +1,10 @@
 // components
 import Home from './components/Home'
+import Login from './components/Login'
 
 // imports 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Login from './components/Login'
+import Register from './components/Register'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route index element={<Home />}></Route>
         <Route path='/login' element={<Login />}></Route>
+        <Route path='/register' element={<Register />}></Route>
       </Routes>
     </BrowserRouter>
   )
