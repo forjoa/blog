@@ -22,6 +22,7 @@ const Login = () => {
               name='email'
               id='email'
               placeholder='example@email.com'
+              autoComplete='username'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -34,6 +35,7 @@ const Login = () => {
                 type={seePwd ? 'text' : 'password'}
                 name='password'
                 id='password'
+                autoComplete='current-password'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
