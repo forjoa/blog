@@ -11,12 +11,16 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: linear-gradient(transparent, var(--background-light));
 }
 
 .main-login form input[type='email'],
 .main-login form input[type='password'],
 .main-login form input[type='text']  {
-    background-color: var(--background);
+    background-color: transparent;
     border: none;
     outline: none;
     border-bottom: 1px solid var(--border);
