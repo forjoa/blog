@@ -23,6 +23,7 @@
 
 .main-login form p a {
     text-decoration: underline;
+    color: var(--blue);
 }
 
 .main-login form input[type='email'],
