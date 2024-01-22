@@ -2,6 +2,7 @@ import Header from './Header'
 import '../styles/login.css'
 import { useState } from 'react'
 import { IconEye, IconEyeOff } from '@tabler/icons-react'
+import Footer from './Footer'
 
 const Login = () => {
   const [email, setEmail] = useState<string>('')
@@ -48,6 +49,7 @@ const Login = () => {
           <input type='submit' value='Send' className='login-submit' />
         </form>
       </div>
+      <Footer />
     </>
   )
 }
