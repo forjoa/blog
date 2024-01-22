@@ -1,12 +1,7 @@
-import { Link } from 'react-router-dom'
 import logo from '../assets/blog-icon.png'
 import {
   IconCopyright,
-  IconHeart,
-  IconHome,
-  IconSearch,
-  IconLogin,
-  IconUserPlus,
+  IconHeart
 } from '@tabler/icons-react'
 import '../styles/footer.css'
 
@@ -22,25 +17,6 @@ const Footer = () => {
           <span>
             Make with love and dedication in Madrid <IconHeart color='red' />
           </span>
-        </div>
-
-        <div className='footer-text-container'>
-          <Link to='/home'>
-            <IconHome />
-            Home
-          </Link>
-          <Link to='/search'>
-            <IconSearch />
-            Search
-          </Link>
-          <Link to='/login'>
-            <IconLogin />
-            Login
-          </Link>
-          <Link to='/register'>
-            <IconUserPlus />
-            Register
-          </Link>
         </div>
       </div>
     </footer>
