@@ -51,8 +51,8 @@ const Cards = () => {
     <>
       <h2 className='subtitle'>The blogsite</h2>
       <div className='cards-container'>
-        {cards.map((card, index) => (
-          <Card card={card} index={index} />
+        {cards.map((card, key) => (
+          <Card card={card} key={key} />
         ))}
       </div>
     </>
