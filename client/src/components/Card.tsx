@@ -1,8 +1,8 @@
 import { CardType } from './Cards'
 
-const Card = ({ card, key }: { card: CardType; key: number }) => {
+const Card = ({ card }: { card: CardType }) => {
   return (
-    <div key={key} className={card.className}>
+    <div className={card.className}>
       <h2>{card.title}</h2>
       <p>{card.description}</p>
     </div>
