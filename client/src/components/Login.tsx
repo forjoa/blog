@@ -3,6 +3,7 @@ import '../styles/login.css'
 import { useState } from 'react'
 import { IconEye, IconEyeOff } from '@tabler/icons-react'
 import Footer from './Footer'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   const [email, setEmail] = useState<string>('')
@@ -49,6 +50,9 @@ const Login = () => {
           </div>
 
           <input type='submit' value='Send' className='login-submit' />
+          <p>
+            If you don't have an account: <Link to='/register'>Register</Link>
+          </p>
         </form>
       </div>
       <Footer />
