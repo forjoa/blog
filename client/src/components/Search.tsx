@@ -2,6 +2,7 @@ import Header from './Header'
 import '../styles/search.css'
 import { useState } from 'react'
 import { IconSearch } from '@tabler/icons-react'
+import Recomendations from './Recomendations'
 
 const Search = () => {
   const [searching, setSearching] = useState<string>('')
@@ -28,6 +29,7 @@ const Search = () => {
             </button>
           </form>
         </div>
+        <Recomendations />
       </div>
     </>
   )
