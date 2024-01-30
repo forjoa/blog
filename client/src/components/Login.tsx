@@ -2,7 +2,6 @@ import Header from './Header'
 import '../styles/login.css'
 import { useState } from 'react'
 import { IconEye, IconEyeOff } from '@tabler/icons-react'
-import Footer from './Footer'
 import { Link } from 'react-router-dom'
 
 const Login = () => {
@@ -55,7 +54,6 @@ const Login = () => {
           </p>
         </form>
       </div>
-      <Footer />
     </>
   )
 }

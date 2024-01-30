@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import Footer from './Footer'
 import Header from './Header'
 import { IconEye, IconEyeOff } from '@tabler/icons-react'
 import { Link } from 'react-router-dom'
@@ -88,7 +87,6 @@ const Register = () => {
           </p>
         </form>
       </div>
-      <Footer />
     </>
   )
 }
