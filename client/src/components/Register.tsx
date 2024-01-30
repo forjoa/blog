@@ -5,6 +5,7 @@ import { IconEye, IconEyeOff } from '@tabler/icons-react'
 import { Link } from 'react-router-dom'
 import { supabase } from './database/supabase'
 import bcrypt from 'bcryptjs-react'
+import { InsertUserParams } from '../types/types'
 
 const Register = () => {
   const [name, setName] = useState<string>('')
@@ -24,16 +25,18 @@ const Register = () => {
     if (p.data?.length) {
       alert('User already exists!')
     } else {
-      const { status } = await supabase.from('authors').insert({
+      const userParams: InsertUserParams = {
         complete_name: name,
         username: username,
         email: email,
         pwd: await bcrypt.hash(password, 10),
-        date: new Date().toISOString().toLocaleString(),
-      })
+        date: new Date(),
+      }
+
+      const { status } = await supabase.from('authors').insert(userParams)
 
       if (status == 201) {
-        alert('')
+        alert('Great, you can log in now!')
       } else {
         alert('Something went wrong!')
       }
