@@ -3,9 +3,7 @@ import Footer from './Footer'
 import Header from './Header'
 import { IconEye, IconEyeOff } from '@tabler/icons-react'
 import { Link } from 'react-router-dom'
-import { supabase } from './database/supabase'
-import bcrypt from 'bcryptjs-react'
-import { InsertUserParams } from '../types/types'
+import { registerUser } from '../utils/insertUser'
 
 const Register = () => {
   const [name, setName] = useState<string>('')
@@ -15,33 +13,11 @@ const Register = () => {
   const [seePwd, setSeePwd] = useState<boolean>(false)
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    const p = await supabase
-      .from('authors')
-      .select('*')
-      .eq('username', username)
-
-    if (p.data?.length) {
-      alert('User already exists!')
-    } else {
-      const userParams: InsertUserParams = {
-        complete_name: name,
-        username: username,
-        email: email,
-        pwd: await bcrypt.hash(password, 10),
-        date: new Date(),
-      }
-
-      const { status } = await supabase.from('authors').insert(userParams)
-
-      if (status == 201) {
-        alert('Great, you can log in now!')
-      } else {
-        alert('Something went wrong!')
-      }
-    }
-  }
+    const resultMessage = await registerUser(name, username, email, password);
+    alert(resultMessage);
+  };
 
   return (
     <>
