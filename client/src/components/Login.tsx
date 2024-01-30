@@ -3,17 +3,26 @@ import '../styles/login.css'
 import { useState } from 'react'
 import { IconEye, IconEyeOff } from '@tabler/icons-react'
 import { Link } from 'react-router-dom'
+import { loginAuth } from '../utils/loginAuth'
 
 const Login = () => {
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const [seePwd, setSeePwd] = useState<boolean>(false)
 
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
+    e.preventDefault()
+
+    const r = await loginAuth(password, email)
+
+    alert(r)
+  }
+
   return (
     <>
       <Header></Header>
       <div className='main-login'>
-        <form>
+        <form onSubmit={handleSubmit}>
           <h1>Login</h1>
           <div className='email-container'>
             <label htmlFor='email'>Email</label>
