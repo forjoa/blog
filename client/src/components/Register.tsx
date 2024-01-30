@@ -13,11 +13,11 @@ const Register = () => {
   const [seePwd, setSeePwd] = useState<boolean>(false)
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    const resultMessage = await registerUser(name, username, email, password);
-    alert(resultMessage);
-  };
+    const resultMessage = await registerUser(name, username, email, password)
+    alert(resultMessage)
+  }
 
   return (
     <>
