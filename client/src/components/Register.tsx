@@ -3,6 +3,8 @@ import Footer from './Footer'
 import Header from './Header'
 import { IconEye, IconEyeOff } from '@tabler/icons-react'
 import { Link } from 'react-router-dom'
+import { supabase } from './database/supabase'
+import bcrypt from 'bcryptjs-react'
 
 const Register = () => {
   const [name, setName] = useState<string>('')
@@ -11,11 +13,38 @@ const Register = () => {
   const [password, setPassword] = useState<string>('')
   const [seePwd, setSeePwd] = useState<boolean>(false)
 
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
+    e.preventDefault()
+
+    const p = await supabase
+      .from('authors')
+      .select('*')
+      .eq('username', username)
+
+    if (p.data?.length) {
+      alert('User already exists!')
+    } else {
+      const { status } = await supabase.from('authors').insert({
+        complete_name: name,
+        username: username,
+        email: email,
+        pwd: await bcrypt.hash(password, 10),
+        date: new Date().toISOString().toLocaleString(),
+      })
+
+      if (status == 201) {
+        alert('')
+      } else {
+        alert('Something went wrong!')
+      }
+    }
+  }
+
   return (
     <>
       <Header />
       <div className='main-login'>
-        <form>
+        <form onSubmit={handleSubmit}>
           <h1>Register</h1>
           <div className='name-container'>
             <label htmlFor='name'>Full name</label>
