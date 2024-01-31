@@ -19,13 +19,8 @@ export const registerUser = async ( name: string, username: string, email: strin
   }
 
   const { status } = await supabase.from('authors').insert(userParams)
-  
-  const { error } = await supabase.auth.signUp({
-    email: email,
-    password: await bcrypt.hash(password, 2),
-  })
 
-  if (status === 201 && !error) {
+  if (status === 201) {
     return "Registration successful! Don't forget to confirm your email address"
   } else {
     return 'Something went wrong!'

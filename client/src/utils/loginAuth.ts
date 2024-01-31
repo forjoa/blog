@@ -8,13 +8,7 @@ export const loginAuth = async ( password: string, email: string ): Promise<stri
   if (m.data?.length) {
     const p = await supabase.from('authors').select('pwd').eq('email', email)
 
-    if (p.data && p.data.length > 0 && p.data[0]?.pwd) {      
-      const r = await supabase.auth.signInWithPassword({
-        email: email,
-        password: password,
-      })
-
-      console.log(r)
+    if (p.data && p.data.length > 0 && p.data[0]?.pwd) {
       if (await bcrypt.compare(password, p.data[0].pwd)) {
         return 'User correctly logged!'
       } else {
