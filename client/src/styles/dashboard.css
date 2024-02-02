@@ -1,0 +1,14 @@
+header.dashboard {
+    display: grid;
+    place-items: center;
+}
+
+.header-dashboard-container {
+    display: flex;
+    width: 80%;
+    max-width: 900px;
+}
+
+header.dashboard img {
+    width: 100px;
+}
