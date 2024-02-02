@@ -18,3 +18,10 @@
     max-width: 500px;
     width: 100%;
 }
+
+@media (max-width: 900px) {
+    .recommendations-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
