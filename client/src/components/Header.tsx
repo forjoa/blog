@@ -7,7 +7,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header>
+    <header className='main'>
       <div className='header-container'>
         <img src={logo} alt='Logo icon' />
         <nav className={`header-nav ${menuOpen ? 'menu-open' : ''}`}>
