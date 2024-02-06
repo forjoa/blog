@@ -1,6 +1,7 @@
 header.dashboard {
     display: grid;
     place-items: center;
+    padding: 20px 0px;
 }
 
 .header-dashboard-container {

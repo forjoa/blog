@@ -7,7 +7,7 @@ const DashboardHeader = () => {
       <div className='header-dashboard-container'>
         <Link to='/dashboard'>
           <img src={icon} alt='Blog icon' />
-          Blogsite
+          <h1>Blogsite</h1>
         </Link>
         <div className='header-options'>
           <nav>
