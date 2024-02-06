@@ -11,7 +11,7 @@ const DashboardHeader = () => {
         </Link>
         <div className='header-options'>
           <nav>
-            <Link to='/dashboard/home'>Home</Link>
+            <Link to='/dashboard'>Home</Link>
             <Link to='/dashboard/my-blogs'>My blogs</Link>
             <Link to='/dashboard/follows'>Followers / Following</Link>
             <Link to='/' style={{ color: 'red' }}>Log out</Link>
