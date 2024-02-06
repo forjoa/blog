@@ -7,16 +7,20 @@ header.dashboard {
     display: flex;
     width: 80%;
     max-width: 900px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-dashboard-container a {
+    display: flex;
+    align-items: center;
 }
 
 header.dashboard img {
-    width: 100px;
+    width: 90px;
 }
 
 .header-options {
-    background-color: #23232379;
-    position: absolute;    
-    top: 100px;
     right: 15%;
     z-index: 1;
     border-radius: 10px;
@@ -29,7 +33,6 @@ header.dashboard img {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
 }
 
@@ -46,28 +49,31 @@ header.dashboard img {
 
 .header-options nav span {
     position: absolute;
-    top: 20px;
-    width: 211.24px;
+    left: 637.5px;
+    width: 67.71px;
     height: 34px;
     border-radius: 8px;
-    transition: .15s;
+    transition: all .15s;
 }
 
 .header-options nav a:nth-child(1):hover~span {
-    background: var(--blue);
+    background: var(--shadow);
 }
 
 .header-options nav a:nth-child(2):hover~span {
-    background: var(--blue);
-    top: 55px;
+    background: var(--shadow);
+    left: 705px;
+    width: 91.23px;
 }
 
 .header-options nav a:nth-child(3):hover~span {
-    background: var(--blue);
-    top: 88px;
+    background: var(--shadow);
+    left: 796px;
+    width: 184.48px;
 }
 
 .header-options nav a:nth-child(4):hover~span {
     background: rgba(255, 0, 0, .3);
-    top: 123px;
+    left: 980px;
+    width: 78.55px;
 }

@@ -11,12 +11,10 @@ const DashboardHeader = () => {
         </Link>
         <div className='header-options'>
           <nav>
-            <a href='/edit-profile'>Edit profile </a>
-            <a href='/my-videos'>My videos </a>
-            <a href='/follows'>Followers / Following </a>
-            <a href='/' style={{ color: 'red' }}>
-              Log out{' '}
-            </a>
+            <Link to='/dashboard/home'>Home</Link>
+            <Link to='/dashboard/my-blogs'>My blogs</Link>
+            <Link to='/dashboard/follows'>Followers / Following</Link>
+            <Link to='/' style={{ color: 'red' }}>Log out</Link>
             <span></span>
           </nav>
         </div>
