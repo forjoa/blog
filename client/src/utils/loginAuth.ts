@@ -1,7 +1,12 @@
 import { supabase } from '../components/database/supabase.ts'
 import bcrypt from 'bcryptjs-react'
 
-export const loginAuth = async ( password: string, email: string ): Promise<string> => {
+interface Response {
+  message: string,
+  flag?: boolean
+}
+
+export const loginAuth = async ( password: string, email: string ): Promise<Response> => {
 
   const m = await supabase.from('authors').select().eq('email', email)
 
@@ -10,15 +15,15 @@ export const loginAuth = async ( password: string, email: string ): Promise<stri
 
     if (p.data && p.data.length > 0 && p.data[0]?.pwd) {
       if (await bcrypt.compare(password, p.data[0].pwd)) {
-        return 'User correctly logged!'
+        return { message: 'User correctly logged!', flag: true }
       } else {
-        return 'Incorrect password'
+        return { message: 'Incorrect password' }
       }
     } else {
-      return 'Invalid user data'
+      return { message: 'Invalid user data' }
     }
   } else {
-    return "User doesn't exist"
+    return { message: "User doesn't exist" }
   }
   
 }
