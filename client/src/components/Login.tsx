@@ -2,20 +2,23 @@ import Header from './Header'
 import '../styles/login.css'
 import { useState } from 'react'
 import { IconEye, IconEyeOff } from '@tabler/icons-react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { loginAuth } from '../utils/loginAuth'
 
 const Login = () => {
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const [seePwd, setSeePwd] = useState<boolean>(false)
+  const navigate = useNavigate()
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault()
 
-    const r = await loginAuth(password, email)
+    const { message, flag } = await loginAuth(password, email)
 
-    alert(r)
+    if (flag) navigate('/dashboard')
+
+    alert(message)
   }
 
   return (
