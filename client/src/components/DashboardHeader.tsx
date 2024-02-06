@@ -9,6 +9,17 @@ const DashboardHeader = () => {
           <img src={icon} alt='Blog icon' />
           Blogsite
         </Link>
+        <div className='header-options'>
+          <nav>
+            <a href='/edit-profile'>Edit profile </a>
+            <a href='/my-videos'>My videos </a>
+            <a href='/follows'>Followers / Following </a>
+            <a href='/' style={{ color: 'red' }}>
+              Log out{' '}
+            </a>
+            <span></span>
+          </nav>
+        </div>
       </div>
     </header>
   )
